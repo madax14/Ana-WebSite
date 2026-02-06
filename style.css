@@ -1,0 +1,186 @@
+:root {
+  --vinho: #7b2d3b;
+  --rosé: #c96a7c;
+  --nude: #f4e9e4;
+  --bege: #faf6f4;
+  --texto: #3a3a3a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: var(--texto);
+  background-color: var(--bege);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+  /*border-style: solid;
+  border-color: blue; */
+  padding: 10px;
+}
+
+.narrow {
+  max-width: 750px;
+}
+
+.header {
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.logo {
+  color: var(--vinho);
+}
+
+nav a {
+  margin-left: 20px;
+  color: var(--texto);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--nude), #f9dce2);
+  padding: 80px 0;
+}
+
+.hero-text h2 {
+  color: var(--vinho);
+  margin: 15px 0;
+}
+
+.tag {
+  background: var(--vinho);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.section.alt {
+  background: white;
+}
+
+.section h3 {
+  color: var(--vinho);
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: var(--vinho);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+.btn-outline {
+  border: 2px solid var(--vinho);
+  color: var(--vinho);
+  padding: 12px 26px;
+  border-radius: 30px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+  padding: 15px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  /*border-style: solid;
+  border-color: yellow;*/
+}
+
+.card {
+  min-width: 260px;
+  background: var(--nude);
+  margin-right: 20px;
+  padding: 30px;
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: var(--vinho);
+  font-weight: 500;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--vinho);
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+}
+
+.cta {
+  background: var(--vinho);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .card {
+    min-width: 220px;
+  }
+}
