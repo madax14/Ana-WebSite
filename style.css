@@ -181,6 +181,7 @@ nav a {
   }
 
   .card {
-    min-width: 220px;
+    min-width: 150px;
   }
 }
+
