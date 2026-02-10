@@ -2,7 +2,7 @@ const track = document.querySelector(".carousel-track");
 const prevBtn = document.querySelector(".carousel-btn.prev");
 const nextBtn = document.querySelector(".carousel-btn.next");
 
-const cardWidth = 280;
+const step = 280;
 let position = 0;
 
 function getMaxScroll() {
@@ -14,54 +14,51 @@ function updatePosition() {
   track.style.transform = `translateX(${position}px)`;
 }
 
-/* Botões */
+/* ======================
+   BOTÕES 
+====================== */
 nextBtn.addEventListener("click", () => {
-  position -= cardWidth;
+  position -= step;
   const maxScroll = getMaxScroll();
   if (position < maxScroll) position = maxScroll;
   updatePosition();
 });
 
 prevBtn.addEventListener("click", () => {
-  position += cardWidth;
+  position += step;
   if (position > 0) position = 0;
   updatePosition();
 });
 
 /* ======================
-   SWIPE MOBILE
+   DRAG / SWIPE REAL
 ====================== */
-let startX = 0;
-let currentX = 0;
 let isDragging = false;
+let startX = 0;
+let startPosition = 0;
 
 track.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
   isDragging = true;
+  startX = e.touches[0].clientX;
+  startPosition = position;
 });
 
 track.addEventListener("touchmove", (e) => {
   if (!isDragging) return;
-  currentX = e.touches[0].clientX;
-});
 
-track.addEventListener("touchend", () => {
-  if (!isDragging) return;
-
+  const currentX = e.touches[0].clientX;
   const diff = currentX - startX;
 
-  // sensibilidade do gesto
-  if (diff > 50) {
-    position += cardWidth;
-  } else if (diff < -50) {
-    position -= cardWidth;
-  }
+  position = startPosition + diff;
 
   const maxScroll = getMaxScroll();
   if (position > 0) position = 0;
   if (position < maxScroll) position = maxScroll;
 
   updatePosition();
+});
+
+track.addEventListener("touchend", () => {
   isDragging = false;
 });
 
