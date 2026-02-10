@@ -52,6 +52,32 @@ a {
   color: var(--vinho);
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+ 
+  /* aro interno */
+  padding: 4px;
+  background: #ffffff;
+
+  /* aro externo luxo */
+  outline: 2px solid var(--vinho);
+  outline-offset: 3px;
+
+  /* profundidade */
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.10),
+    0 0 0 1px rgba(123, 45, 59, 0.15);
+}
+
 nav a {
   margin-left: 20px;
   color: var(--texto);
@@ -184,4 +210,5 @@ nav a {
     min-width: 150px;
   }
 }
+
 
